@@ -1,0 +1,43 @@
+
+:root {
+   --main_color: #2196F3;
+   --dark_color: #212121;
+   --light_color: #FFFFFF;
+   --second_light_color: #757575;
+   --second_dark_color: #000000;
+   --first_light_color: #ECECEC;
+   --shadow_dark_color: #2F303A;
+   --shadw_light_color: #F5F4FA;
+   --font-family: "Roboto", sans-serif;
+   --second-family: "Raleway", sans-serif;
+   --shadow: rgba(0, 0, 0, 0.25);
+   --shadow-background: rgba(47, 48, 58, 0.4)
+}
+
+   $fonts: (
+     font-family: Roboto sans-serif,
+     second-family: Raleway sans-serif,
+
+
+    );
+
+    $colors:(
+     main_color: #2196F3,
+     dark_color: #212121,
+     light_color: #FFFFFF,
+     second_light_color: #757575,
+     second_dark_color: #000000,
+     first_light_color: #ECECEC,
+     shadow_dark_color: #2F303A,
+     shadw_light_color: #F5F4FA,
+     shadow: rgba(0, 0, 0, 0.25),
+     shadow-background: rgba(47, 48, 58, 0.4)
+
+    );
+    @function getFont($key) {
+    @return map-get($fonts, $key);
+}
+
+    @function getColor($key) {
+    @return map-get($colors, $key);
+}

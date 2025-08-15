@@ -1,0 +1,121 @@
+.footer {
+   padding-top: 60px;
+   padding-bottom: 60px;
+   background-color: var(--shadow_dark_color);
+   z-index: 1;
+}
+
+.footer-logo {
+   margin-bottom: 20px;
+   font-family: var(--second-family);
+   font-weight: 700;
+   font-size: 26px;
+   letter-spacing: 0.03em;
+   color: var(--light_color);
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-span {
+   font-family: var(--second-family);
+   font-weight: 700;
+   font-size: 26px;
+   letter-spacing: 0.03em;
+   color: var(--main_color);
+}
+.footer-item:not(:last-child){
+   margin-bottom: 10px;
+}
+
+
+.address-description {
+   margin-bottom: 10px;
+   font-family: var(--font-family);
+   font-weight: 400;
+   font-size: 14px;
+   line-height: 1.71;
+   letter-spacing: 0.03em;
+   color: var(--light_color);
+}
+.address-item{
+   margin-bottom: 10px;
+}
+
+.footer-logo:hover {
+   color: var(--main_color);
+}
+
+.footer-link:hover {
+   color: var(--main_color);
+}
+
+
+.footer-link {
+   color: var(--second_light_color);
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+}
+.address-list{
+   margin-right: 70px;
+}
+.footer-box{
+   display: flex;
+   align-items: baseline;
+}
+.joing {
+   margin-right: 93px;
+}
+.joing-title{
+   font-family: var(--font-family);
+font-weight: 700;
+font-size: 14px;
+letter-spacing: 0.03em;
+text-transform: uppercase;
+color: var(--light_color);
+   margin-bottom: 20px;
+}
+.joing-list{
+   display: flex;
+   gap: 10px;
+}
+.joing-link{
+    width: 44px;
+    height: 44px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    fill:var(--light_color) ;
+     transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+}
+.joing-link:hover{
+   background-color: var(--main_color);
+}
+.form-title{
+padding-bottom: 20px;
+font-family: var(--font-family);
+font-weight: 700;
+font-size: 14px;
+letter-spacing: 0.03em;
+text-transform: uppercase;
+color: #fff;
+
+}
+.footer-form{
+   display: flex;
+   gap: 12px;
+}
+.footer-input{
+width: 358px;
+height: 50px;
+border-radius: 4px;
+box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+background: rgba(33, 150, 243, 0);  
+border: 1px solid rgba(255, 255, 255, 0.3);
+color: var(--light_color);
+}

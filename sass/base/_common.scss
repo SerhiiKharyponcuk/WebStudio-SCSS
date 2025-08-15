@@ -1,0 +1,26 @@
+body {
+   font-family: var(--font-family);
+   font-size: 14px;
+   letter-spacing: 0.03em;
+   font-weight: 700;
+   color: var(--light_color);
+}
+
+.nav-list,
+.nav,.nav-p,
+.wat-we-do-list,
+.team-list,
+.flex,.container-p,
+.footer-logo,
+.hero-title
+  {
+    display: flex;
+    align-items: center;
+ 
+}
+
+
+.main{
+  display:flex ;
+  flex-direction: column;
+}
