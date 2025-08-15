@@ -9,25 +9,6 @@
    background-color: var(--light_color);
 }
 
-.header-logo {
-   margin-right: 93px;
-   font-family: var(--second-family);
-   font-weight: 700;
-   font-size: 26px;
-   letter-spacing: 0.03em;
-   color: var(--second_dark_color);
-   transition-property: color;
-   transition-duration: 250ms;
-   transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
-   
-}
-.logo-span {
-   font-family: var(--second-family);
-   font-weight: 700;
-   font-size: 26px;
-   letter-spacing: 0.03em;
-   color: var(--main_color);
-}
 
 .nav-list {
    font-family: var(--font-family);

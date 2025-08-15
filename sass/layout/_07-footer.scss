@@ -5,25 +5,6 @@
    z-index: 1;
 }
 
-.footer-logo {
-   margin-bottom: 20px;
-   font-family: var(--second-family);
-   font-weight: 700;
-   font-size: 26px;
-   letter-spacing: 0.03em;
-   color: var(--light_color);
-    transition-property: color;
-    transition-duration: 250ms;
-    transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.footer-span {
-   font-family: var(--second-family);
-   font-weight: 700;
-   font-size: 26px;
-   letter-spacing: 0.03em;
-   color: var(--main_color);
-}
 .footer-item:not(:last-child){
    margin-bottom: 10px;
 }
