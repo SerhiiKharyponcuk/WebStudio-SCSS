@@ -1,9 +1,3 @@
-
-.features-list{
-   display: flex;
-   justify-content: center;
-}
-
 .features {
    padding-top: 94px;
    padding-bottom: 0;
@@ -18,7 +12,9 @@
    color: var(--dark_color);
 }
 
-.features-list {
+.features-list{
+   display: flex;
+   justify-content: center;
    font-family: var(--font-family);
    font-weight: 400;
    font-size: 14px;
@@ -26,8 +22,8 @@
    letter-spacing: 0.03em;
    color: var(--second_light_color);
    gap: 30px;
-
 }
+
 .features-item::before{
    display: flex;
    width: 270px;
@@ -43,11 +39,9 @@
 
 .features-item:nth-child(1):before{
    background-image: url(../svg/antenna1.svg);
-   
 }
 .features-item:nth-child(2):before{
    background-image: url(../svg/clock1.svg) ;
-  
 }
 .features-item:nth-child(3):before{
    background-image:url(../svg/diagram1.svg);
@@ -55,4 +49,3 @@
 .features-item:nth-child(4):before{
    background-image:url(../svg/astronaut1.svg) ;
 }
-

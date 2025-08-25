@@ -1,0 +1,58 @@
+// Центрування flex'ом
+@mixin flex-center($dir: row, $gap: 0) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: center;
+  align-items: center;
+  gap: $gap;
+}
+
+// Шрифтові параметри
+@mixin font($family, $weight, $size, $ls: 0.03em, $color: inherit, $tt: none) {
+  font-family: $family;
+  font-weight: $weight;
+  font-size: $size;
+  letter-spacing: $ls;
+  color: $color;
+  text-transform: $tt;
+}
+
+// Транзішн (коротка форма)
+@mixin transition($props...) {
+  transition-property: $props;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+// Кнопка (базовий стиль)
+@mixin button-base($bg: $color-primary, $text: $color-light, $w: auto, $h: 50px) {
+  @include flex-center(row);
+  border: none;
+  border-radius: 4px;
+  width: $w;
+  height: $h;
+  font-family: $font-main;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  color: $text;
+  background-color: $bg;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  @include transition(background-color, color, box-shadow);
+}
+
+// Input/textarea стилі
+@mixin input-base($h: 40px, $radius: 4px) {
+  border: 1px solid var(--second_light_color);
+  border-radius: $radius;
+  height: $h;
+  padding: 12px 16px;
+  font-family: $font-main;
+  font-size: 14px;
+  color: $color-dark;
+  &:hover, &:focus {
+    border-color: $color-primary;
+  }
+}

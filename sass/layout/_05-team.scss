@@ -1,13 +1,18 @@
 .team {
+   background-attachment: var(--shadw_light_color);
+}
+
+.team {
    width: 100%;
    padding-top: 94px;
    padding-bottom: 94px;
    background-color: #F5F4FA;
 }
+
 .flip:not(:last-child){
    margin-right: 30px;
-
 }
+
 .team-item{
     width: 270px;
     height: 428px;
@@ -15,8 +20,6 @@
     border-radius: 0 0 4px 4px;
     box-shadow: 0 4px 4px 0 var(--shadow);
 }
-
-
 
 .team-title {
    display: flex;
@@ -52,12 +55,14 @@
    text-align: left;
    color: var(--second_light_color);
 }
+
 .social-list{
    display: flex;
    justify-content: center;
    gap: 10px;
    margin-bottom: 30px;
 }
+
 .social-link{
     width: 44px;
     height: 44px;

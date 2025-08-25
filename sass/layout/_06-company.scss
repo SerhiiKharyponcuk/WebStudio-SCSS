@@ -1,8 +1,8 @@
 .company{
    padding-top: 94px;
    padding-bottom: 94px;
-
 }
+
 .title {
    padding-bottom: 50px;
    font-family: var(--font-family);
@@ -12,6 +12,7 @@
    text-align: center;
    color: var(--dark_color);
 }
+
 .company-link{
     width: 170px;
     height: 92px;
@@ -31,6 +32,6 @@
 }
 .company-list{
    display: flex;
-    justify-content: center;
-    gap: 30px;
+   justify-content: center;
+   gap: 30px;
 }

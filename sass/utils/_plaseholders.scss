@@ -1,0 +1,28 @@
+// Великі заголовки (наприклад у hero, секціях)
+%title-large {
+  font-family: $font-main;
+  font-weight: 700;
+  font-size: 36px;
+  letter-spacing: 0.03em;
+  text-align: center;
+  color: $color-dark;
+}
+
+// Середній заголовок (команди, картки)
+%title-medium {
+  font-family: $font-main;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.03em;
+  color: $color-dark;
+}
+
+// Текст-пояснення/сірий текст
+%text-muted {
+  font-family: $font-main;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: $color-text-muted;
+}
