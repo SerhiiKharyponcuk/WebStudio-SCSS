@@ -1,43 +1,39 @@
 
-:root {
-   --main_color: #2196F3;
-   --dark_color: #212121;
-   --light_color: #FFFFFF;
-   --second_light_color: #757575;
-   --second_dark_color: #000000;
-   --first_light_color: #ECECEC;
-   --shadow_dark_color: #2F303A;
-   --shadw_light_color: #F5F4FA;
-   --font-family: "Roboto", sans-serif;
-   --second-family: "Raleway", sans-serif;
-   --shadow: rgba(0, 0, 0, 0.25);
-   --shadow-background: rgba(47, 48, 58, 0.4)
+// Кольори
+$colors: (
+  main: #2196F3,
+  dark: #212121,
+  light: #FFFFFF,
+  second-light: #757575,
+  second-dark: #000000,
+  first-light: #ECECEC,
+  shadow-dark: #2F303A,
+  shadow-light: #F5F4FA
+);
+
+// Шрифти
+$fonts: (
+  main: "Roboto, sans-serif",
+  second: "Raleway, sans-serif"
+);
+
+// Тіні
+$shadows: (
+  base: rgba(0, 0, 0, 0.25),
+  background: rgba(47, 48, 58, 0.4)
+);
+
+// Функція для кольорів
+@function color($name) {
+  @return map-get($colors, $name);
 }
 
-   $fonts: (
-     font-family: '"Roboto", sans-serif',
-     second-family: '"Raleway", sans-serif',
-
-
-    );
-
-    $colors:(
-     main_color: #2196F3,
-     dark_color: #212121,
-     light_color: #FFFFFF,
-     second_light_color: #757575,
-     second_dark_color: #000000,
-     first_light_color: #ECECEC,
-     shadow_dark_color: #2F303A,
-     shadw_light_color: #F5F4FA,
-     shadow: rgba(0, 0, 0, 0.25),
-     shadow-background: rgba(47, 48, 58, 0.4)
-
-    );
-    @function getFont($key) {
-    @return map-get($fonts, $key);
+// Функція для шрифтів
+@function font($name) {
+  @return map-get($fonts, $name);
 }
 
-    @function getColor($key) {
-    @return map-get($colors, $key);
+// Функція для тіней
+@function shadow($name) {
+  @return map-get($shadows, $name);
 }

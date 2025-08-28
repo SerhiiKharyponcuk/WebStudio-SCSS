@@ -1,37 +1,32 @@
-.company{
-   padding-top: 94px;
-   padding-bottom: 94px;
-}
+.company {
+  padding-top: 94px;
+  padding-bottom: 94px;
 
-.title {
-   padding-bottom: 50px;
-   font-family: var(--font-family);
-   font-weight: 700;
-   font-size: 36px;
-   letter-spacing: 0.03em;
-   text-align: center;
-   color: var(--dark_color);
-}
+  &__title {
+    padding-bottom: 50px;
+    @include font(font(main), 700, 36px, 0.03em, color(dark));
+    text-align: center;
+    @extend %title-large;
+  }
 
-.company-link{
+  &__link {
     width: 170px;
     height: 92px;
     border: 1px solid #AFB1B8;
     border-radius: 4px;
+    @include flex-center(row);
+    fill: #AFB1B8;
+    @include transition(border, fill);
+
+    &:hover {
+      border: 1px solid color(main);
+      fill: color(main);
+    }
+  }
+
+  &__list {
     display: flex;
     justify-content: center;
-    align-items: center;
-    fill: #AFB1B8;
-    transition-property: border, fill;
-    transition-duration: 250ms;
-    transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
-}
-.company-link:hover{
-   border: 1px solid var(--main_color);
-   fill: var(--main_color);
-}
-.company-list{
-   display: flex;
-   justify-content: center;
-   gap: 30px;
+    gap: 30px;
+  }
 }

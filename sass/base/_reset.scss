@@ -76,11 +76,11 @@ input:-webkit-autofill {
   box-shadow: 0 0 0px 1000px white inset !important;
   -webkit-text-fill-color: #000 !important;
 }
-.modal-input:has(input:valid:focus) {
+.hero__modal-input:has(input:valid:focus) {
   border-color: green;
 }
 
-.modal-input:has(input:invalid:focus) {
+.hero__modal-input:has(input:invalid:focus) {
   border-color: red;
 }
 .border{

@@ -1,41 +1,47 @@
 .header__logo {
-   margin-right: 93px;
-   font-family: var(--second-family);
-   font-weight: 700;
-   font-size: 26px;
-   letter-spacing: 0.03em;
-   color: var(--second_dark_color);
-   transition-property: color;
-   transition-duration: 250ms;
-   transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
-}
-.header-logo:hover { color: var(--main_color); }
+  margin-right: 93px;
+  font-family: font(second);
+  font-weight: 700;
+  font-size: 26px;
+  letter-spacing: 0.03em;
+  color: color(second-dark);
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
-.logo-span {
-   font-family: var(--second-family);
-   font-weight: 700;
-   font-size: 26px;
-   letter-spacing: 0.03em;
-   color: var(--main_color);
+  &:hover {
+    color: color(main);
+  }
 }
 
-.footer-logo {
-   margin-bottom: 20px;
-   font-family: var(--second-family);
-   font-weight: 700;
-   font-size: 26px;
-   letter-spacing: 0.03em;
-   color: var(--light_color);
-   transition-property: color;
-   transition-duration: 250ms;
-   transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+.header__logo-accent {
+  font-family: font(second);
+  font-weight: 700;
+  font-size: 26px;
+  letter-spacing: 0.03em;
+  color: color(main);
 }
-.footer-logo:hover { color: var(--main_color); }
 
-.footer-span {
-   font-family: var(--second-family);
-   font-weight: 700;
-   font-size: 26px;
-   letter-spacing: 0.03em;
-   color: var(--main_color);
+.footer__logo {
+  margin-bottom: 20px;
+  font-family: font(second);
+  font-weight: 700;
+  font-size: 26px;
+  letter-spacing: 0.03em;
+  color: color(light);
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    color: color(main);
+  }
+}
+
+.footer__span {
+  font-family: font(second);
+  font-weight: 700;
+  font-size: 26px;
+  letter-spacing: 0.03em;
+  color: color(main);
 }
