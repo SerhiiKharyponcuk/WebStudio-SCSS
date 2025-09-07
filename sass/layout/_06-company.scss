@@ -6,7 +6,6 @@
     padding-bottom: 50px;
     @include font(font(main), 700, 36px, 0.03em, color(dark));
     text-align: center;
-    @extend %title-large;
   }
 
   &__link {

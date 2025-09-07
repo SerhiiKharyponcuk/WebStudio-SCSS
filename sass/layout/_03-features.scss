@@ -4,7 +4,6 @@
 
   &__title {
     @include font(font(main), 700, 14px, 0.03em, color(dark), uppercase);
-    @extend %title-medium;
   }
 
   &__list {

@@ -18,14 +18,12 @@
     margin-bottom: 30px;
     @include font(font(main), 500, 16px, 0.03em, color(dark));
     text-align: left;
-    @extend %title-medium; 
   }
 
   &__title {
     padding-bottom: 50px;
     @include font(font(main), 700, 36px, 0.03em, color(dark));
     text-align: center;
-    @extend %title-large;
   }
 
   &__name {
@@ -35,7 +33,6 @@
     margin-bottom: 10px;
     @include font(font(main), 400, 16px, 0.03em, color(second-light));
     text-align: left;
-    @extend %text-muted;
   }
 
   &__social-list {

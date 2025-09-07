@@ -16,7 +16,6 @@
     line-height: 1.71;
     letter-spacing: 0.03em;
     color: color(light);
-    @extend %text-muted;
   }
 
   &__address-item {
@@ -28,7 +27,6 @@
     transition-property: color;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    @extend %text-muted;
 
     &:hover {
       color: color(main);
@@ -56,7 +54,6 @@
     text-transform: uppercase;
     color: color(light);
     margin-bottom: 20px;
-    @extend %title-medium;
   }
 
   &__join-list {
@@ -87,7 +84,6 @@
     font-family: font(main);
     text-transform: uppercase;
     color: color(light);
-    @extend %title-large;
   }
 
   &__form {

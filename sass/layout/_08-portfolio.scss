@@ -9,13 +9,11 @@
   &__description {
     @include font(font(main), 400, 16px, 0.03em, color(second-light));
     line-height: 1.87;
-    @extend %text-muted;
   }
 
   &__title {
     @include font(font(main), 700, 18px, 0.06em, color(dark));
     line-height: 2.0;
-    @extend %title-medium;
   }
 
   &__item {

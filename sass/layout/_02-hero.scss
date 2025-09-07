@@ -20,7 +20,6 @@
   @include font(font(main), 900, 44px, 0.06em, color(light), uppercase);
   line-height: 1.36;
   text-align: center;
-  @extend %title-large;
 }
 
 .hero__flex {
