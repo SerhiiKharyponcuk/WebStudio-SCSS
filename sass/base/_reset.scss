@@ -23,7 +23,6 @@ ol, ul {
 
 a {
     text-decoration: none;
-    font-style: normal;
 }
 
 img {
@@ -31,58 +30,39 @@ img {
     max-width: 100%;
     height: auto;
 }
-address{
-    text-decoration: none;
+
+address {
     font-style: normal;
 }
-.button{
-border: none;
-}
-.border ,
-.border:focus ,
-.border:hover{
+
+input {
     border: none;
     outline: none;
 }
-input[type="checkbox"]:checked {
-  accent-color: #2196F3;
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
 }
-textarea{
+
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}
+
+/* input:focus {
+    outline: none;
+} */
+
+button {
+    border: none;
     outline: none;
 }
-.modal-input, textarea {
-  background-color: white !important; /* ваш фон */
-  box-shadow: none !important;
-}
-.footer-input {
-  outline: none;
 
-}
-.footer-input:focus {
-background: rgba(33, 150, 243, 0);
-}
-
-
-input::selection {
-  background: transparent;
-}
-
-input:focus {
-  background-color: white;
-}
-
-input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
-  box-shadow: 0 0 0px 1000px white inset !important;
-  -webkit-text-fill-color: #000 !important;
-}
-.hero__modal-input:has(input:valid:focus) {
-  border-color: green;
-}
-
-.hero__modal-input:has(input:invalid:focus) {
-  border-color: red;
-}
-.border{
-  width: 100%;
+textarea {
+    outline: none;
 }

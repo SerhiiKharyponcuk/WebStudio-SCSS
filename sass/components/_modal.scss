@@ -1,120 +1,187 @@
-.hero__backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
-  opacity: 1;
-  @include transition(opacity);
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: get-var('shadow__color-2');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: visible;
+    @include multi-transition((opacity, visibility));
+}
 
-  &.is-hidden {
+.is-hidden {
     opacity: 0;
     pointer-events: none;
-  }
-
-  // показуємо модалку лише коли бекдроп активний
-  &:not(.is-hidden) .hero__modal {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-  }
+    visibility: hidden;
 }
 
 .no-scroll {
-  overflow: hidden;
+    overflow: hidden;
 }
 
-.hero__modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 528px;
-  padding: 40px;
-  background-color: color(light);
-  border-radius: 4px;
-  box-shadow:
-    0 2px 1px 0 rgba(0, 0, 0, 0.2),
-    0 1px 1px 0 rgba(0, 0, 0, 0.14),
-    0 1px 3px 0 rgba(0, 0, 0, 0.12);
-
-  // старт: схована
-  transform: translate(-50%, -50%) scale(0.8);
-  opacity: 0;
-  @include transition(transform, opacity);
-
-  &-close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-  }
-
-  &-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  &-text {
-    @include font(font(main), 700, 20px, 0.03em, color(dark));
-    text-align: center;
-    margin-bottom: 12px;
-  }
-
-  &-label {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    font-weight: 400;
-    font-size: 12px;
-    letter-spacing: 0.01em;
-    color: color(second-light);
-  }
-
-  &-input {
-    @include flex-center(row, 10px);
-    justify-content: flex-start;
-    padding-left: 15px;
-    border: 1px solid color(second-light);
-    border-radius: 4px;
-    height: 40px;
-    fill: color(dark);
-
-    &:hover,
-    &:focus-within {
-      border-color: color(main);
-      fill: color(main);
-    }
-  }
-
-  &-comment {
-    width: 448px;
-    height: 120px;
-    resize: none;
-    border: 1px solid color(second-light);
-    border-radius: 4px;
-    padding: 12px 16px;
-
-    &:hover,
-    &:focus {
-      border-color: color(main);
-      fill: color(main);
-    }
-  }
-
-  &-agree {
-    @include flex-center(row, 8px);
-    margin-bottom: 30px;
-    font-weight: 400;
-    line-height: 171%;
-    color: color(second-light);
-  }
-
-  &-link {
-    color: color(main);
-    text-decoration: underline;
-  }
+.backdrop.is-hidden .modal {
+    transform: scale(0);
 }
 
-.hero__label-span {
-  color: red;
+.is-valid {
+    border: 1px solid limegreen !important;
+    fill: limegreen !important;
+}
+
+.modal {
+    position: relative;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 528px;
+    max-height: 100%;
+    padding: 40px;
+    box-shadow:
+        0 2px 1px 0 get-var('shadow__color-2'),
+        0 1px 1px 0 get-var('shadow__color-3'),
+        0 1px 3px 0 get-var('shadow__color-4');
+    background: get-var('light__color-2');
+    transform: scale(1);
+    @include multi-transition(transform);
+
+    @media screen and (max-width: 480px) {
+        padding: 15px;
+    }
+
+    &__close {
+        position: absolute;
+        top: 8px;
+        left: 90%;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+        border: 1px solid get-var('shadow__color-9');
+        fill: get-var('dark__color-2');
+        background-color: get-var('light__color-2');
+        @include multi-transition(fill);
+
+        &:hover {
+            fill: get-var('main__color');
+        }
+    }
+
+    &__form {
+        @include flex-column;
+    }
+
+    &__title {
+        margin-bottom: 12px;
+        font-size: 20px;
+        text-align: center;
+        color: get-var('portfolio__dark-color');
+    }
+
+    &__main-content-form {
+        display: flex;
+        gap: 10px;
+        @include flex-column;
+    }
+
+    &__label {
+        display: flex;
+        gap: 8px;
+        font-weight: 400;
+        font-size: 12px;
+        letter-spacing: 0.01em;
+        color: get-var('dark__color-3');
+        @include flex-column;
+    }
+
+    &__label--textarea-margin {
+        margin-bottom: 20px;
+
+        @media screen and (max-height: 480px) {
+            margin-bottom: 5px;
+        }
+    }
+
+    &__label-comment {
+        margin-bottom: 30px;
+        display: flex;
+        gap: 8px;
+        font-weight: 400;
+        line-height: 171%;
+        color: get-var('dark__color-3');
+        @include flex-center;
+
+        @media screen and (max-height: 480px) {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__input {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding-left: 15px;
+        border: 1px solid get-var('shadow__color-10');
+        border-radius: 4px;
+        height: 40px;
+        fill: get-var('portfolio__dark-color');
+        @include multi-transition((border, fill));
+
+        @media screen and (max-height: 680px) {
+            height: 25px;
+        }
+    }
+
+    &__textarea-comment {
+        resize: none;
+        border: 1px solid get-var('shadow__color-10');
+        border-radius: 4px;
+        height: 120px;
+        padding: 12px 16px;
+        @include multi-transition(border);
+
+        @media screen and (max-height: 680px) {
+            height: 40px;
+        }
+    }
+
+    &__link {
+        color: get-var('main__color');
+        text-decoration: underline;
+    }
+
+    &__submit {
+        display: block;
+        margin: 0 auto;
+        border-radius: 4px;
+        width: 200px;
+        height: 50px;
+        font-size: 16px;
+        line-height: 187%;
+        letter-spacing: 0.06em;
+        color: get-var('light__color-2');
+        box-shadow: 0 4px 4px 0 get-var('shadow__color');
+        background: get-var('main__color');
+        @include multi-transition(background-color);
+
+        &:hover {
+            background-color: get-var('main__color-hover');
+        }
+
+        &:disabled {
+            background-color: get-var('dark__color-3');
+            cursor: not-allowed;
+        }
+    }
+
+    &__input:hover,
+    &__input:focus-within,
+    &__textarea-comment:hover,
+    &__textarea-comment:focus {
+        border: 1px solid get-var('main__color');
+        fill: get-var('main__color');
+    }
 }

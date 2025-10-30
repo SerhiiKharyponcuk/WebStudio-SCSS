@@ -1,65 +1,85 @@
 .team {
-  width: 100%;
-  padding-top: 94px;
-  padding-bottom: 94px;
-  background-color: color(shadow-light);
+    @include section;
+    background-color: get-var('light__color');
 
-  &__item {
-    width: 270px;
-    height: 428px;
-    background-color: color(light);
-    border-radius: 0 0 4px 4px;
-    box-shadow: 0 4px 4px 0 shadow(base);
-  }
-
-  &__position {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-    @include font(font(main), 500, 16px, 0.03em, color(dark));
-    text-align: left;
-  }
-
-  &__title {
-    padding-bottom: 50px;
-    @include font(font(main), 700, 36px, 0.03em, color(dark));
-    text-align: center;
-  }
-
-  &__name {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-    margin-bottom: 10px;
-    @include font(font(main), 400, 16px, 0.03em, color(second-light));
-    text-align: left;
-  }
-
-  &__social-list {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 30px;
-  }
-
-  &__social-link {
-    width: 44px;
-    height: 44px;
-    border-radius: 100% 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    fill: #AFB1B8;
-    @include transition(background-color, fill);
-
-    &:hover {
-      background-color: color(main);
-      fill: color(light);
+    &__section-title {
+        @include section-title;
     }
-  }
-}
 
-/* окремий селектор, як у тебе */
-.flip:not(:last-child) {
-  margin-right: 30px;
+    .team-list {
+        @include flex-column;
+        gap: 30px;
+
+        @media screen and (min-width: 768px) {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        @media screen and (min-width: 1200px) {
+            flex-wrap: nowrap;
+        }
+
+        &__item {
+            flex-basis: 100%;
+            border-radius: 0 0 4px 4px;
+            min-width: 270px;
+            background-color: get-var('light__color-2');
+            box-shadow:
+                0 2px 1px 0 get-var('shadow__color-2'),
+                0 1px 1px 0 get-var('shadow__color-3'),
+                0 1px 3px 0 get-var('shadow__color-4');
+
+            @media screen and (min-width: 768px) {
+                flex-basis: calc((100% - 30px) / 2);
+            }
+
+            @media screen and (min-width: 1200px) {
+                flex-basis: calc((100% - 120px) / 4);
+            }
+        }
+
+        &__img {
+            display: block;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        &__title {
+            font-weight: 500;
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        &__description {
+            margin-bottom: 16px;
+            font-weight: 400;
+            font-size: 16px;
+            text-align: center;
+            color: get-var('dark__color-3');
+        }
+
+        &__social-list {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        &__social-link {
+            width: 44px;
+            height: 44px;
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            fill: var(--fifth_dark_color);
+            @include multi-transition((background-color, fill));
+
+            &:hover {
+                background-color: get-var('main__color');
+                fill: get-var('light__color-2');
+            }
+        }
+    }
 }

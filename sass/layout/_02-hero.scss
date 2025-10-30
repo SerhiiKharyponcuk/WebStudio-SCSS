@@ -1,31 +1,122 @@
 .hero {
-  @include flex-center(row); 
-  height: 700px;
-  margin-top: 80px;
-  padding: 200px 0;
-  background-color: color(shadow-dark);
-  background-image: linear-gradient(shadow(background)), url("../images/background.jpg");
+  padding-top: 118px;
+  padding-bottom: 118px;
+  height: 400px;
+  color: get-var('light__color-2');
+  background-color: get-var('dark__color');
+  margin: 0 auto;
+  background-image:
+    linear-gradient(get-var('dark__color-4'), get-var('dark__color-4')),
+    url(../../images/1x-herobackground-mobile.jpg);
+  background-size: 100% 400px;
   background-position: center;
-  background-size: cover;
+  background-repeat: no-repeat;
+
+  @media (min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+    background-image:
+      linear-gradient(get-var('dark__color-4'), get-var('dark__color-4')),
+      url(../../images/2x-herobackground-mobile.jpg);
+  }
+
+  @media (min-device-pixel-ratio: 3),
+  (-webkit-min-device-pixel-ratio: 3),
+  (min-resolution: 288dpi),
+  (min-resolution: 3dppx) {
+    background-image:
+      linear-gradient(get-var('dark__color-4'), get-var('dark__color-4')),
+      url(../../images/3x-herobackground-mobile.jpg);
+  }
+
+  @media screen and (min-width: 768px) {
+    background-image:
+      linear-gradient(get-var('dark__color-4'), get-var('dark__color-4')),
+      url(../../images/1x-herobackground-tablet.jpg);
+
+    @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+      background-image:
+        linear-gradient(get-var('dark__color-4'), get-var('dark__color-4')),
+        url(../../images/2x-herobackground-tablet.jpg);
+    }
+
+    @media (min-device-pixel-ratio: 3),
+    (-webkit-min-device-pixel-ratio: 3),
+    (min-resolution: 288dpi),
+    (min-resolution: 3dppx) {
+      background-image:
+        linear-gradient(get-var('dark__color-4'), get-var('dark__color-4')),
+        url(../../images/3x-herobackground-tablet.jpg);
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    height: 600px;
+    padding-top: 200px;
+    padding-bottom: 200px;
+    background-image:
+      linear-gradient(get-var('dark__color-4'), get-var('dark__color-4')),
+      url(../../images/1x-herobackground-desktop.jpg);
+    background-size: 1600px 600px;
+
+    @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+      background-image:
+        linear-gradient(get-var('dark__color-4'), get-var('dark__color-4')),
+        url(../../images/2x-herobackground-desktop.jpg);
+    }
+
+    @media (min-device-pixel-ratio: 3),
+    (-webkit-min-device-pixel-ratio: 3),
+    (min-resolution: 288dpi),
+    (min-resolution: 3dppx) {
+      background-image:
+        linear-gradient(get-var('dark__color-4'), get-var('dark__color-4')),
+        url(../../images/3x-herobackground-desktop.jpg);
+    }
+  }
+
+  .container {
+    @include flex-column-center;
+  }
+
+  &__title {
+    max-width: 360px;
+    margin-bottom: 30px;
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 162%;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-align: center;
+
+    @media screen and (min-width: 1200px) {
+      max-width: 696px;
+      font-size: 44px;
+      line-height: 1.36;
+    }
+  }
 }
 
-.hero__flip {
-  @include transition(transform);
-  transition-delay: 1000ms;
-  transition-duration: 500ms;
-}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgb(33, 150, 243, 0.7);
+  }
 
-.hero-title {
-  width: 690px;
-  @include font(font(main), 900, 44px, 0.06em, color(light), uppercase);
-  line-height: 1.36;
-  text-align: center;
-}
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 15px rgb(33, 150, 243, 0);
+  }
 
-.hero__flex {
-  @include flex-center(column);
-}
-
-.team {
-  background-color: color(shadow-light);
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgb(33, 150, 243, 0);
+  }
 }
